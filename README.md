@@ -2,7 +2,7 @@
 Codebase for https://franklinchieze.com
 
 ## Documentation
-The documentation for the Material Kit React is hosted at our [website](https://demos.creative-tim.com/material-kit-react/#/documentation/tutorial).
+See documentation for [Material Kit React](https://demos.creative-tim.com/material-kit-react/#/documentation/tutorial).
 
 ## Licensing
 

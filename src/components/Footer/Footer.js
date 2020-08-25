@@ -8,8 +8,7 @@ import classNames from "classnames";
 import { List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
+import { Link } from "react-router-dom";
 
 import styles from "assets/jss/material-kit-react/components/footerStyle.js";
 
@@ -32,22 +31,12 @@ export default function Footer(props) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/?ref=mkr-footer"
+              <Link
+                to="/"
                 className={classes.block}
-                target="_blank"
               >
-                Creative Tim
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/presentation?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
+                About me
+              </Link>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
@@ -58,28 +47,17 @@ export default function Footer(props) {
                 Blog
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://www.creative-tim.com/license?ref=mkr-footer"
-                className={classes.block}
-                target="_blank"
-              >
-                Licenses
-              </a>
-            </ListItem>
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          &copy; {1900 + new Date().getYear()} , template by{" "}
           <a
             href="https://www.creative-tim.com?ref=mkr-footer"
             className={aClasses}
             target="_blank"
           >
             Creative Tim
-          </a>{" "}
-          for a better web.
+          </a>
         </div>
       </div>
     </footer>
