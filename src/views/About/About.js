@@ -19,14 +19,15 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
+
+import constants from "services/constants";
 
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function LandingPage(props) {
+export default function About(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -34,7 +35,7 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="Material Kit React"
+        brand={constants.BRAND_NAME}
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -43,16 +44,16 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+      <Parallax filter image={require("assets/img/bg4.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Your Story Starts With Us.</h1>
+              <h1 className={classes.title}>Hi, I'm Franklin.</h1>
               <h4>
-                Every landing page needs a small description after the big bold
-                title, that{"'"}s why we added this text here. Add here all the
-                information that can make you or your product create the first
-                impression.
+                I am a curious, motivated and ever-learning software engineer
+                with a passion for helping businesses meet their objectives
+                using technology. I have 5 years of professional experience in
+                software development. Let's work together.
               </h4>
               <br />
               <Button
@@ -63,7 +64,7 @@ export default function LandingPage(props) {
                 rel="noopener noreferrer"
               >
                 <i className="fas fa-play" />
-                Watch video
+                See Projects
               </Button>
             </GridItem>
           </GridContainer>
@@ -72,7 +73,6 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <TeamSection />
           <WorkSection />
         </div>
       </div>

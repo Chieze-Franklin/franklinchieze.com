@@ -29,7 +29,7 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Components"
+          buttonText="Experience"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
@@ -37,14 +37,20 @@ export default function HeaderLinks(props) {
           buttonIcon={Apps}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              All components
+              Projects
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              Tools
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              Work History
             </Link>,
             <a
               href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
               target="_blank"
               className={classes.dropdownLink}
             >
-              Documentation
+              Certifications
             </a>
           ]}
         />
@@ -56,7 +62,7 @@ export default function HeaderLinks(props) {
           target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
+          <CloudDownload className={classes.icons} /> Resume
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
@@ -67,12 +73,46 @@ export default function HeaderLinks(props) {
         </Tooltip>*/}
         <Tooltip
           id="instagram-twitter"
-          title="Follow us on twitter"
+          title="Connect with me on LinkedIn"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
+            href="https://www.linkedin.com/in/franklin-chieze/"
+            target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <i className={classes.socialIcons + " fab fa-linkedin"} />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id="instagram-twitter"
+          title="View my projects on GitHub"
+          placement={window.innerWidth > 959 ? "top" : "left"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button
+            href="https://github.com/Chieze-Franklin"
+            target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <i className={classes.socialIcons + " fab fa-github"} />
+          </Button>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id="instagram-twitter"
+          title="Follow me on twitter"
+          placement={window.innerWidth > 959 ? "top" : "left"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button
+            href="https://twitter.com/franklin_chieze"
             target="_blank"
             color="transparent"
             className={classes.navLink}
@@ -84,13 +124,13 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-facebook"
-          title="Follow us on facebook"
+          title="Follow me on facebook"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
+            href="https://web.facebook.com/franklin.chieze.5"
             target="_blank"
             className={classes.navLink}
           >
@@ -101,13 +141,13 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-tooltip"
-          title="Follow us on instagram"
+          title="Follow me on instagram"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+            href="https://www.instagram.com/franklinchieze/"
             target="_blank"
             className={classes.navLink}
           >
