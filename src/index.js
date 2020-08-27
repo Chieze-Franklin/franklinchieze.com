@@ -19,7 +19,7 @@ ReactDOM.render(
       <Route path="/" exact component={About} />
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
-      <Route path="/haha" component={Components} />
+      <Route path="/go" component={Components} />
     </Switch>
   </Router>,
   document.getElementById("root")
