@@ -13,6 +13,7 @@ import Description from "./Sections/Description.js";
 import Links from "./Sections/Links.js";
 import Roles from "./Sections/Roles.js";
 import ScreenShots from "./Sections/ScreenShots.js";
+import StatesLineGraph from "./Sections/StatesLineGraph.js";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
 
@@ -35,6 +36,18 @@ const translateProjectState = (state) => {
   }
 };
 
+const getCurrentState = (project) => {
+  return project.states[project.states.length - 1].state;
+};
+
+const getDurationOfActiveDevelopment = (project) => {
+  return 5;
+};
+
+const statesData = (states) => {
+  return [3, 3, 3, 2, 2, 1, 3, 3, 2, 1, 0, 0];
+};
+
 const project = {
   description:
     "I think that’s a responsibility that I have, to push possibilities, to" +
@@ -43,7 +56,6 @@ const project = {
     "got the answers. I understand culture. I am the nucleus. I think that’s a" +
     "responsibility that I have, to push possibilities, to show people, this is" +
     "the level that things could be at.",
-  durationOfActiveDevelopment: 5,
   icon: require("assets/img/faces/avatar.jpg"),
   links: [
     {
@@ -75,13 +87,23 @@ const project = {
     require("assets/img/bg.jpg"),
     require("assets/img/bg3.jpg"),
   ],
-  state: "DEVELOPMENT",
+  states: [
+    {
+      state: "DEVELOPMENT",
+      start: 1,
+      end: 2,
+    },
+  ],
   title: "Yutars",
 };
 
 export default function ProjectView(props) {
   const classes = useStyles();
   const {expanded} = props;
+
+  project.durationOfActiveDevelopment = getDurationOfActiveDevelopment(project);
+  project.state = getCurrentState(project);
+  project.statesData = statesData(project.states);
 
   return (
     <div className={classes.sections}>
@@ -113,6 +135,7 @@ export default function ProjectView(props) {
             <ScreenShots project={project} {...props} />
             <Description project={project} {...props} />
             <Links project={project} {...props} />
+            <StatesLineGraph project={project} {...props} />
             {!expanded && (
               <div>
                 <Link to="/projects/abc">
@@ -122,6 +145,10 @@ export default function ProjectView(props) {
                 </Link>
               </div>
             )}
+            <div>
+              <br />
+              <br />
+            </div>
           </GridItem>
         </GridContainer>
       </div>
