@@ -9,11 +9,13 @@ import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 // sections for this page
+import Achievements from "./Sections/Achievements.js";
 import Description from "./Sections/Description.js";
 import Links from "./Sections/Links.js";
 import Roles from "./Sections/Roles.js";
 import ScreenShots from "./Sections/ScreenShots.js";
 import StatesLineGraph from "./Sections/StatesLineGraph.js";
+import Tools from "./Sections/Tools.js";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
 
@@ -49,6 +51,20 @@ const statesData = (states) => {
 };
 
 const project = {
+  achievements: [
+    "I think that’s a responsibility that I have, to push possibilities, to" +
+      "show people, this is the level that things could be at. I will be the" +
+      "leader of a company that ends up being worth billions of dollars, because" +
+      "got the answers. I understand culture. I am the nucleus. I think that’s a" +
+      "responsibility that I have, to push possibilities, to show people, this is" +
+      "the level that things could be at.",
+    "I think that’s a responsibility that I have, to push possibilities, to" +
+      "show people, this is the level that things could be at. I will be the" +
+      "leader of a company that ends up being worth billions of dollars, because" +
+      "got the answers. I understand culture. I am the nucleus. I think that’s a" +
+      "responsibility that I have, to push possibilities, to show people, this is" +
+      "the level that things could be at.",
+  ],
   description:
     "I think that’s a responsibility that I have, to push possibilities, to" +
     "show people, this is the level that things could be at. I will be the" +
@@ -95,6 +111,24 @@ const project = {
     },
   ],
   title: "Yutars",
+  tools: [
+    {
+      title: "React",
+      id: "1234",
+    },
+    {
+      title: "Redux",
+      id: "567",
+    },
+    {
+      title: "GraphQL",
+      id: "78",
+    },
+    {
+      title: "NodeJs",
+      id: "890",
+    },
+  ],
 };
 
 export default function ProjectView(props) {
@@ -134,8 +168,10 @@ export default function ProjectView(props) {
             <Roles project={project} {...props} />
             <ScreenShots project={project} {...props} />
             <Description project={project} {...props} />
+            <Achievements project={project} {...props} />
             <Links project={project} {...props} />
             <StatesLineGraph project={project} {...props} />
+            <Tools project={project} {...props} />
             {!expanded && (
               <div>
                 <Link to="/projects/abc">

@@ -82,13 +82,20 @@ export default function StatesLineGraph(props) {
         },
       ],
     },
+    title: {
+      display: true,
+      text: [
+        "Activity Chart",
+        "This shows how much work has been done on the project in the past 12 months",
+      ],
+    },
     tooltips: {
       enabled: false,
     },
   };
 
   return (
-    <div style={{ height: expanded ? "300px" : "100px" }}>
+    <div style={{ height: expanded ? "320px" : "120px" }}>
       <Line data={data} options={options} />
     </div>
   );
