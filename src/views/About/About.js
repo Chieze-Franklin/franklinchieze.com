@@ -1,4 +1,6 @@
 import React from "react";
+// react components for routing our app without refresh
+import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -40,7 +42,7 @@ export default function About(props) {
         fixed
         changeColorOnScroll={{
           height: 400,
-          color: "white"
+          color: "white",
         }}
         {...rest}
       />
@@ -56,16 +58,11 @@ export default function About(props) {
                 software development. Let's work together.
               </h4>
               <br />
-              <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                See Projects
-              </Button>
+              <Link to="/projects">
+                <Button color="danger" size="lg">
+                  <i className="fas fa-play" /> See Projects
+                </Button>
+              </Link>
             </GridItem>
           </GridContainer>
         </div>
