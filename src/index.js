@@ -22,6 +22,7 @@ ReactDOM.render(
       <Route path="/" exact component={About} />
       <Route path="/projects" exact component={Projects} />
       <Route path="/projects/:id" exact component={Project} />
+      <Route path="/tools" exact component={Projects} />
 
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
