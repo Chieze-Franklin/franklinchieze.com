@@ -9,6 +9,7 @@ import "assets/scss/material-kit-react.scss?v=1.9.0";
 import About from "views/About/About.js";
 import Project from "views/Project/Project.js";
 import Projects from "views/Projects/Projects.js";
+import Tools from "views/Tools/Tools.js";
 
 import Components from "views/Components/Components.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
@@ -22,7 +23,7 @@ ReactDOM.render(
       <Route path="/" exact component={About} />
       <Route path="/projects" exact component={Projects} />
       <Route path="/projects/:id" exact component={Project} />
-      <Route path="/tools" exact component={Projects} />
+      <Route path="/tools" exact component={Tools} />
 
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
