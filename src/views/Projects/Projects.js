@@ -16,7 +16,7 @@ import constants from "services/constants";
 
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+export default function Projects(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (

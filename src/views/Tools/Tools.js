@@ -8,7 +8,7 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
-import ProjectView from "components/ProjectView/ProjectView.js";
+import ToolView from "components/ToolView/ToolView.js";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
@@ -16,7 +16,7 @@ import constants from "services/constants";
 
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+export default function Tools(props) {
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -34,9 +34,9 @@ export default function ProfilePage(props) {
       />
       <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
-        <ProjectView expanded={false} />
-        <ProjectView expanded={false} />
-        <ProjectView expanded={false} />
+        <ToolView expanded={false} />
+        <ToolView expanded={false} />
+        <ToolView expanded={false} />
       </div>
       <Footer />
     </div>
