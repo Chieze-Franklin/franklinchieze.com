@@ -37,6 +37,7 @@ export default function Tools(props) {
         <ToolView expanded={false} />
         <ToolView expanded={false} />
         <ToolView expanded={false} />
+        <ToolView expanded={false} />
       </div>
       <Footer />
     </div>
