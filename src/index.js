@@ -12,6 +12,7 @@ import "assets/scss/material-kit-react.scss?v=1.9.0";
 import About from "views/About/About.js";
 import Project from "views/Project/Project.js";
 import Projects from "views/Projects/Projects.js";
+import Tool from "views/Tool/Tool.js";
 import Tools from "views/Tools/Tools.js";
 
 import Components from "views/Components/Components.js";
@@ -31,6 +32,7 @@ ReactDOM.render(
         component={SuspenseComponent(Project)}
       />
       <Route path="/tools" exact component={SuspenseComponent(Tools)} />
+      <Route path="/tools/:id" exact component={SuspenseComponent(Tool)} />
 
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
