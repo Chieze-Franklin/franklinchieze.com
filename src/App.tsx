@@ -12,7 +12,7 @@ import { EmailVerification, Login, Signup } from './pages/Auth';
 import { Landing } from './pages/Landing';
 
 const usePageViews = () => {
-  let location = useLocation();
+  const location = useLocation();
   useEffect(() => {
     ReactGA.initialize(String(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_CODE));
     ReactGA.set({ page: location.pathname }); // Update the user's current page
