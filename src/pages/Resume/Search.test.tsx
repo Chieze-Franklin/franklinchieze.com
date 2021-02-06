@@ -2,28 +2,28 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { cleanup, render, fireEvent, waitFor, } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import { Search } from './Search';
+import { Resume } from './Resume';
 
 afterEach(cleanup);
 
-const SearchWithRouter = () => (
+const ResumeWithRouter = () => (
   <MockedProvider addTypename={false}>
     <Router>
-      <Search />
+      <Resume />
     </Router>
   </MockedProvider>
   
 );
 
-describe('Search Page', () => {
-  test('should render default search page', () => {
-    const { getByText } = render(<SearchWithRouter />);
-    expect(getByText(/Search/)).toBeInTheDocument();
+describe('Resume Page', () => {
+  test('should render default resume page', () => {
+    const { getByText } = render(<ResumeWithRouter />);
+    expect(getByText(/Resume/)).toBeInTheDocument();
   });
 
   test('should allow Input editable', () => {
-    const { getByTestId } = render(<SearchWithRouter />);
-    const input = getByTestId('search-input');
+    const { getByTestId } = render(<ResumeWithRouter />);
+    const input = getByTestId('resume-input');
     waitFor(() => {
       fireEvent.change(input, { target: { value: '110' } });
     });
