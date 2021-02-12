@@ -1,12 +1,18 @@
 import React from 'react';
 
 import facebook from '../../assets/images/facebook.svg';
+import facebookDark from '../../assets/images/facebook-dark.svg';
 import github from '../../assets/images/github.svg';
+import githubDark from '../../assets/images/github-dark.svg';
 import instagram from '../../assets/images/instagram.svg';
+import instagramDark from '../../assets/images/instagram-dark.svg';
 import linkedin from '../../assets/images/linkedin.svg';
+import linkedinDark from '../../assets/images/linkedin-dark.svg';
 import twitter from '../../assets/images/twitter.svg';
+import twitterDark from '../../assets/images/twitter-dark.svg';
+import print from '../../assets/images/print.svg';
 
-const FooterIcons = ({image, url, description}) => {
+const FooterIcon = ({image, url, description}) => {
   return (
     <a
       className="nav-link"
@@ -24,27 +30,33 @@ const FooterIcons = ({image, url, description}) => {
   );
 }
 
-export const Footer = () => {
+export const Footer = ({ color = "transparent", showPrint = false }) => {
 
   return (
     <footer className="fixed-bottom">
       <ul className="nav px-3">
         <li className="nav-item">
-          <FooterIcons image={github} url="https://github.com/Chieze-Franklin" description="Github profile" />
+          <FooterIcon image={color === "white" ? githubDark : github} url="https://github.com/Chieze-Franklin" description="Github profile" />
         </li>
         <li className="nav-item">
-          <FooterIcons image={twitter} url="https://twitter.com/franklin_chieze" description="Twitter profile" />
+          <FooterIcon image={color === "white" ? twitterDark : twitter} url="https://twitter.com/franklin_chieze" description="Twitter profile" />
         </li>
         <li className="nav-item">
-          <FooterIcons image={linkedin} url="https://www.linkedin.com/in/franklin-chieze/" description="LinkedIn profile" />
+          <FooterIcon image={color === "white" ? linkedinDark : linkedin} url="https://www.linkedin.com/in/franklin-chieze/" description="LinkedIn profile" />
         </li>
         <li className="nav-item">
-          <FooterIcons image={instagram} url="https://www.instagram.com/franklinchieze/" description="Instagram profile" />
+          <FooterIcon image={color === "white" ? instagramDark : instagram} url="https://www.instagram.com/franklinchieze/" description="Instagram profile" />
         </li>
         <li className="nav-item">
-          <FooterIcons image={facebook} url="https://web.facebook.com/franklin.chieze.5" description="Facebook profile" />
+          <FooterIcon image={color === "white" ? facebookDark : facebook} url="https://web.facebook.com/franklin.chieze.5" description="Facebook profile" />
         </li>
       </ul>
+
+      {showPrint && (
+        <div className="print-icon">
+          <img src={print} width="50" alt="Print resume icon" />
+        </div>
+      )}
     </footer>
   )
 }
