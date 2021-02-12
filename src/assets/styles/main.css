@@ -17,8 +17,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+img#logo {
+  border-radius: 50%;
+}
+
+/* Homepage styles */
+
 .bg {
-  background-image: linear-gradient(to right, rgba(6, 16, 70, 0.0), rgba(5, 5, 5, 0.767), rgba(5, 5, 5, 0.973)), url("../images/bg.jpg");
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(50, 50, 50, 0.6), rgba(5, 5, 5, 0.973)), url("../images/bg.svg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +46,7 @@ body {
 
 .hidden {
   width: auto;
-  min-height: 25rem;
+  min-height: 23rem;
 }
 
 .heading {
@@ -83,13 +89,126 @@ body {
   background-color: #c4c4c4;
 }
 
+/* Resume page styles */
+
+.logo-text {
+  color: #0000ff;
+  font-size: 1.5rem;
+}
+
+.print-icon {
+  position: fixed;
+  right: 80px;
+  bottom: 50px;
+}
+
+.address-font {
+  font-size: 1.3rem;
+}
+
+.timeline-font {
+  font-size: 1.2rem;
+}
+
+.profile-main-section {
+  height: calc(100vh - 120px);
+}
+
+.profile-section {
+  width: 100%;
+  height: 47rem;
+}
+
+/* Responsiveness */
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .main-section-content {
-    max-height: 52rem;
+    max-height: 48rem;
   }
 
   .main-section {
     padding-right: 3.5rem;
+  }
+}
+
+/* Small devices (portrait, 768px and down */
+@media only screen and (max-width: 768px) {
+  .main-section-content {
+    max-height: 31rem;
+  }
+
+  .hidden {
+    min-height: 10rem;
+  }
+
+  .profile-main-section {
+    margin-top: 1.3rem;
+  }
+
+  .profile-section {
+    height: 25.5rem;
+  }
+
+  .company {
+    display: flex;
+    justify-content: center;
+  }
+
+  .print-icon {
+    position: fixed;
+    right: 1rem;
+    bottom: 0.6rem;
+  }
+
+  .header {
+    font-size: 1rem;
+  }
+
+  .line {
+    width: 10%;
+  }
+
+  .print-icon img {
+    width: 2rem;
+  }
+
+  .company img {
+    width: 1.2rem;
+    margin-right: 3px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+  
+  .address-font {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .resume-heading {
+    font-size: 0.9rem;
+  }
+
+  .heading-2 {
+    font-size: 0.8rem;
+  }
+  
+  .timeline-font {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .details-section p {
+    font-size: 0.8rem;
+  }
+
+  .list-text {
+    font-size: 0.8rem;
+    margin-bottom: 0.7rem;
   }
 }
