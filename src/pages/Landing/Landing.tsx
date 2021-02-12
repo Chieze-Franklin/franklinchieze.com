@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card } from '../../components/Card';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Background } from '../../layouts/Background';
@@ -21,7 +22,7 @@ export const Landing: React.FC = () => {
                   Hi &#128075;, I'm Frank
                 </h1>
                 <p className="description">
-                  Full stack web developer currently with <a href="https://www.homebound.com/" target="_blank" rel="noreferrer">Homebound</a>{" "}
+                  Full stack web developer currently working with <a href="https://www.homebound.com/" target="_blank" rel="noreferrer">Homebound</a>{" "}
                   where we are disrupting the construction industry in US and beyond.
                   During the weekends I help build <a href="https://comicwox.com/" target="_blank" rel="noreferrer">Comicwox</a> and{" "}
                   <a href="https://yutars.com/" target="_blank" rel="noreferrer">Yutars</a>,{" "}
@@ -32,20 +33,24 @@ export const Landing: React.FC = () => {
                   <button className="view-works-button mb-5">My work experiences</button>
                 </Link>
                 <p className="heading">News &#128071;</p>
-                <div className="card px-3 py-4 mb-2">
-                  <div className="card-body text-dark">
-                    <h5 className="card-title">Yutars</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="https://yutars.com/" className="card-link">yutars.com</a>
-                  </div>
-                </div>
-                <div className="card px-3 py-4 mb-2">
-                  <div className="card-body text-dark">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="card-link">Card link</a>
-                  </div>
-                </div>
+                <Card
+                  title="Yutars"
+                  text="I'm currently working on Yutars, a simple and modern way to know a borrower's level of credit exposure in real time."
+                  url="https://yutars.com/"
+                  urlText="yutars.com"
+                />
+                <Card
+                  title="graphql-bootstrap"
+                  text="I'm currently working on this CLI tool that converts TypeScript types to GraphQL schema and their TypeScript resolvers."
+                  url="https://www.npmjs.com/package/graphql-bootstrap"
+                  urlText="npm package"
+                />
+                <Card
+                  title="Comicwox"
+                  text="I'm currently adding some new features to Comicwox, a platform that allows users read Nigerian-made comics."
+                  url="https://comicwox.com/"
+                  urlText="comicwox.com"
+                />
               </div>
             </div>
           </div>
