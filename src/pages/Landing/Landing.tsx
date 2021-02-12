@@ -30,7 +30,7 @@ export const Landing: React.FC = () => {
                   I'm passionate about helping companies scale and achieve their goals using technology.
                 </p>
                 <Link to="/resume">
-                  <button className="view-works-button mb-5">My work experiences</button>
+                  <button className="view-works-button mb-5">See my resume</button>
                 </Link>
                 <p className="heading">News &#128071;</p>
                 <Card
