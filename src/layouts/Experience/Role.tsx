@@ -14,7 +14,7 @@ export const Role = (props) => {
             <h6 className="font-weight-bold heading-2">Tools</h6>
             <p>
               {role.tools.map(tool => (
-                <a href={tool.url} target="_blank" rel="noreferrer">
+                <a key={tool.name} href={tool.url} target="_blank" rel="noreferrer">
                   <img
                     src={tool.icon}
                     alt={tool.name}
@@ -34,7 +34,7 @@ export const Role = (props) => {
             <h6 className="font-weight-bold heading-2">Projects</h6>
             <ul className="list-text mb-md-3">
               {role.projects.map(project => (
-                <li>
+                <li key={project.name}>
                   <span className="mr-3"></span>
                   <a href={project.url || "#"}>
                     {project.name}
@@ -50,7 +50,7 @@ export const Role = (props) => {
             <h6 className="font-weight-bold heading-2">Accomplishments</h6>
             <ul className="list-text mb-md-3">
               {role.accomplishments.map(accomplishment => (
-                <li>
+                <li key={accomplishment}>
                   <span className="mr-3"></span>
                   {accomplishment}
                 </li>
