@@ -138,9 +138,9 @@ export const Resume: React.FC = () => {
       }]
     },
     {
-      name: "Comicwox",
+      name: "ComicWox",
       description: "ComicWox Nigeria is the largest digital platform for African comics.",
-      website: "https://comicswox.com",
+      website: "https://comicwox.com",
       logo: "data:image/png;base64,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",
       location: "Lagos, Nigeria",
       startDate: "Oct 2019",
@@ -153,9 +153,9 @@ export const Resume: React.FC = () => {
         description: "As the lead engineer, I make technical decisions (front-end and back-end) designed to improve user experience and to have a positive outcome on the bottom line of the business.",
         tools: [tools["gitlab"], tools["firebase"], tools["javascript"], tools["node"], tools["react"], tools["redux"], tools["typescript"]],
         projects: [{
-          name: "Comicwox Platform",
+          name: "ComicWox Platform",
           icon: "",
-          url: "https://comicswox.com"
+          url: "https://comicwox.com"
         }],
         accomplishments: [
           "Infrastructure cost used to be about $30/month. By making smart decisions like moving to a serverless architecture using cloud functions (where we pay per invocation of cloud function instead of paying for each hour the server application runs), we've been able to crash that cost to less than $1/month.",
