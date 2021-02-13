@@ -64,7 +64,7 @@ export const Role = (props) => {
             <h6 className="font-weight-bold heading-2">Recognitions</h6>
             <ul className="list-text mb-md-3">
               {role.recognitions.map(recognition => (
-                <li>
+                <li key={recognition.name}>
                   <span className="mr-3"></span>
                   <a href={recognition.url || "#"}>
                     {recognition.name}
