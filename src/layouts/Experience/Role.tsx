@@ -7,7 +7,7 @@ export const Role = (props) => {
     <div className="mb-4 details-section">
         <h5 className="resume-heading">{role.title}</h5>
         <p>{role.startDate} - {role.endDate} <span className="font-italic">({role.type})</span></p>
-        <p>{role.description}</p>
+        <p>{role.description.split("\n").filter(line => !!line).map(line => <>{line}<br /></>)}</p>
 
         {role.tools && (
           <>
@@ -22,7 +22,7 @@ export const Role = (props) => {
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title={tool.name}
-                  />
+                  />{" "}
                 </a>
               ))}
             </p>
@@ -52,9 +52,7 @@ export const Role = (props) => {
               {role.accomplishments.map(accomplishment => (
                 <li>
                   <span className="mr-3"></span>
-                  <a href={accomplishment.url || "#"}>
-                    {accomplishment.name}
-                  </a>
+                  {accomplishment}
                 </li>
               ))}
             </ul>
