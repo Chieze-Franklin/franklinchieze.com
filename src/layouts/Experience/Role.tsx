@@ -1,41 +1,79 @@
 import React from 'react';
 
 export const Role = (props) => {
+  const { role } = props;
 
   return (
     <div className="mb-4 details-section">
-        <h5 className="resume-heading">{props.title}</h5>
-        <p>Jan 2020 - Present <span className="font-italic">(Fulltime)</span></p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Provident beatae assumenda voluptate recusandae. Aspernatur illo
-        itaque ratione commodi cumque odit sunt soluta sapiente? Esse modi
-        tempore nobis. In, cum hic. Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit.
-        </p>
+        <h5 className="resume-heading">{role.title}</h5>
+        <p>{role.startDate} - {role.endDate} <span className="font-italic">({role.type})</span></p>
+        <p>{role.description.split("\n").filter(line => !!line).map(line => <>{line}<br /></>)}</p>
 
-        <h6 className="font-weight-bold heading-2">Tools</h6>
-        <p><img src="assets/images//docker.svg" alt="docker" /></p>
+        {role.tools && (
+          <>
+            <h6 className="font-weight-bold heading-2">Tools</h6>
+            <p>
+              {role.tools.map(tool => (
+                <a key={tool.name} href={tool.url} target="_blank" rel="noreferrer">
+                  <img
+                    src={tool.icon}
+                    alt={tool.name}
+                    width="26"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title={tool.name}
+                  />{" "}
+                </a>
+              ))}
+            </p>
+          </>
+        )}
 
-        <h6 className="font-weight-bold heading-2">Projects</h6>
-        <ul className="list-group list-text mb-md-3">
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Project 1</a></li>
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Project 2</a></li>
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Project 3</a></li>
-        </ul>
+        {role.projects && (
+          <>
+            <h6 className="font-weight-bold heading-2">Projects</h6>
+            <ul className="list-text mb-md-3">
+              {role.projects.map(project => (
+                <li key={project.name}>
+                  <span className="mr-3"></span>
+                  <a href={project.url || "#"}>
+                    {project.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h6 className="font-weight-bold heading-2">Accomlishments</h6>
-        <ul className="list-group list-text mb-md-3">
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Accomplishment 1</a></li>
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Accomplishment 2</a></li>
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Accomplishment 3</a></li>
-        </ul>
+        {role.accomplishments && (
+          <>
+            <h6 className="font-weight-bold heading-2">Accomplishments</h6>
+            <ul className="list-text mb-md-3">
+              {role.accomplishments.map(accomplishment => (
+                <li key={accomplishment}>
+                  <span className="mr-3"></span>
+                  {accomplishment}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h6 className="font-weight-bold heading-2">Recognitions</h6>
-        <ul className="list-group list-text mb-md-3">
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Recognition 1</a></li>
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Recognition 2</a></li>
-        <li className="list-group-item"><span className="mr-3">&#42;</span><a href="#">Recognition 3</a></li>
-        </ul>
+        {role.recognitions && (
+          <>
+            <h6 className="font-weight-bold heading-2">Recognitions</h6>
+            <ul className="list-text mb-md-3">
+              {role.recognitions.map(recognition => (
+                <li key={recognition.name}>
+                  <span className="mr-3"></span>
+                  <a href={recognition.url || "#"}>
+                    {recognition.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
     </div>
   )
 }
