@@ -1,4 +1,5 @@
 import React from 'react';
+import { useReactToPrint } from 'react-to-print';
 
 import facebook from '../../assets/images/facebook.svg';
 import facebookDark from '../../assets/images/facebook-dark.svg';
@@ -30,7 +31,31 @@ const FooterIcon = ({image, url, description}) => {
   );
 }
 
-export const Footer = ({ color = "transparent", showPrint = false }) => {
+export const Footer = ({ color = "transparent", showPrint = false, printOptions }) => {
+
+  const handlePrint = useReactToPrint({
+    content: () => printOptions.componentRef.current,
+    documentTitle: "Franklin Chieze - Resume",
+    // pageStyle: `
+    // @page {
+    //   size: 250mm 297mm;
+    //   /* size: A4; */
+    //   margin: 0;
+    // }
+  
+    // @media all {
+    //   .pagebreak {
+    //     display: none;
+    //   }
+    // }
+  
+    // @media print {
+    //   .pagebreak {
+    //     /*page-break-before: always;*/
+    //   }
+    // }
+    // `,
+  });
 
   return (
     <footer className="fixed-bottom">
@@ -53,7 +78,7 @@ export const Footer = ({ color = "transparent", showPrint = false }) => {
       </ul>
 
       {showPrint && (
-        <div className="print-icon" onClick={() => alert("Hello")}>
+        <div className="print-icon" onClick={handlePrint}>
           <img src={print} width="40" alt="Print resume icon" />
         </div>
       )}

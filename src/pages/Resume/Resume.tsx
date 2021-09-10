@@ -277,10 +277,12 @@ export const Resume: React.FC = () => {
     },
   ];
 
+  let componentRef = React.createRef<HTMLElement>();
+
   return (
     <Fragment>
       <Header color="white" shadow fixed />
-      <main>
+      <main ref={componentRef}>
         <Experience title="Experiences (Full-Time)">
           {fulltimeCompanies.map(company => (
             <Company key={company.name} company={company}>
@@ -301,7 +303,7 @@ export const Resume: React.FC = () => {
         </Experience>
       </main>
 
-      <Footer color="white" showPrint={true} />
+      <Footer color="white" showPrint={true} printOptions={{ componentRef }} />
     </Fragment>
   );
 }
