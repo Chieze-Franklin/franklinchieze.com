@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { Company, Experience, Role } from '../../layouts/Experience';
@@ -301,6 +300,7 @@ export const Resume: React.FC = () => {
           ))}
         </Experience>
       </main>
+
       <Footer color="white" showPrint={true} />
     </Fragment>
   );

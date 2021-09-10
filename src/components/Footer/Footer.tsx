@@ -1,5 +1,4 @@
 import React from 'react';
-import { print as printAsPdf } from 'react-pdf-print';
 
 import facebook from '../../assets/images/facebook.svg';
 import facebookDark from '../../assets/images/facebook-dark.svg';
@@ -54,7 +53,7 @@ export const Footer = ({ color = "transparent", showPrint = false }) => {
       </ul>
 
       {showPrint && (
-        <div className="print-icon" onClick={() => printAsPdf(["1"])}>
+        <div className="print-icon" onClick={() => alert("Hello")}>
           <img src={print} width="40" alt="Print resume icon" />
         </div>
       )}
