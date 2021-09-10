@@ -53,8 +53,8 @@ export const Footer = ({ color = "transparent", showPrint = false }) => {
       </ul>
 
       {showPrint && (
-        <div className="print-icon">
-          <img src={print} width="50" alt="Print resume icon" />
+        <div className="print-icon" onClick={() => alert("Hello")}>
+          <img src={print} width="40" alt="Print resume icon" />
         </div>
       )}
     </footer>

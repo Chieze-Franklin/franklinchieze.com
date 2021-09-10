@@ -301,7 +301,7 @@ export const Resume: React.FC = () => {
         </Experience>
       </main>
 
-      <Footer color="white" showPrint={false} />
+      <Footer color="white" showPrint={true} />
     </Fragment>
   );
 }

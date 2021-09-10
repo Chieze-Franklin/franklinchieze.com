@@ -110,9 +110,9 @@ img#logo {
   font-size: 1.2rem;
 }
 
-.profile-main-section {
-  /* height: calc(100vh - 120px); */
-}
+/* .profile-main-section {
+  height: calc(100vh - 120px);
+} */
 
 .profile-section {
   width: 100%;
@@ -146,9 +146,9 @@ img#logo {
     margin-top: 1.3rem;
   }
 
-  .profile-section {
-    /* height: 25.5rem; */
-  }
+  /* .profile-section {
+    height: 25.5rem;
+  } */
 
   .company {
     display: flex;
