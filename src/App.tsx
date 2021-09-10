@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Resume } from './pages/Resume';
+import { Resume, ResumePdf } from './pages/Resume';
 import { Landing } from './pages/Landing';
 
 export const App = () => {
@@ -12,6 +12,7 @@ export const App = () => {
     <Switch>
       <Route component={Landing} exact path="/" />
       <Route component={Resume} exact path="/resume" />
+      <Route component={ResumePdf} exact path="/resume/pdf" />
     </Switch>
   );
 }
