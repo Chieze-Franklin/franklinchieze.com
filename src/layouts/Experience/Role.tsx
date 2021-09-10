@@ -4,7 +4,7 @@ export const Role = (props) => {
   const { role } = props;
 
   return (
-    <div className="mb-4 details-section">
+    <div className="mb-4 details-section" style={{ pageBreakInside: "avoid" }}>
         <h5 className="resume-heading">{role.title}</h5>
         <p>{role.startDate} - {role.endDate} <span className="font-italic">({role.type})</span></p>
         <p>{role.description.split("\n").filter(line => !!line).map(line => <>{line}<br /></>)}</p>
