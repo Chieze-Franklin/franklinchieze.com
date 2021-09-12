@@ -11,7 +11,7 @@ import linkedin from '../../assets/images/linkedin.svg';
 import linkedinDark from '../../assets/images/linkedin-dark.svg';
 import twitter from '../../assets/images/twitter.svg';
 import twitterDark from '../../assets/images/twitter-dark.svg';
-import print from '../../assets/images/print.svg';
+// import print from '../../assets/images/print.svg';
 
 const FooterIcon = ({image, url, description}) => {
   return (
@@ -78,15 +78,16 @@ export const Footer = ({ color = "transparent", showPrint = false, printOptions 
       </ul>
 
       {showPrint && (
-        <div className="print-icon" onClick={() => {
+        <button title="Print resume" className="print-icon" onClick={() => {
             if (handlePrint) {
               window.scrollTo(0, 0); // this counters the bug that occurs when printing a scrolled page
               handlePrint();
             }
           }
         }>
-          <img src={print} width="40" alt="Print resume icon" />
-        </div>
+          &#128424; {/* 🖨 */}
+          {/* <img src={print} width="30" alt="Print resume icon" /> */}
+        </button>
       )}
     </footer>
   )

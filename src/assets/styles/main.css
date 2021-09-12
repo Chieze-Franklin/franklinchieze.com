@@ -100,6 +100,19 @@ img#logo {
   position: fixed;
   right: 80px;
   bottom: 50px;
+
+  background-color: rgba(68, 51, 255, 0.267);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: #43F4;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 36px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: .3s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .address-font {
