@@ -78,7 +78,13 @@ export const Footer = ({ color = "transparent", showPrint = false, printOptions 
       </ul>
 
       {showPrint && (
-        <div className="print-icon" onClick={handlePrint}>
+        <div className="print-icon" onClick={() => {
+            if (handlePrint) {
+              window.scrollTo(0, 0); // this counters the bug that occurs when printing a scrolled page
+              handlePrint();
+            }
+          }
+        }>
           <img src={print} width="40" alt="Print resume icon" />
         </div>
       )}
