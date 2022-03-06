@@ -211,7 +211,6 @@ export const Resume: React.FC = () => {
       name: "Yutars",
       description: "Yutars (https://yutars.com/) is a technology company that helps lending and financial institutions in Nigeria make smart decisions with respect to the loans they give by presenting them with the current financial health of their potential borrowers.",
       website: "https://yutars.com/",
-      // logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZFtfZibMWTSZT4W8RWEW6n26-x_1kDURHA&usqp=CAU",
       location: "Lagos, Nigeria",
       startDate: "Jun 2020",
       endDate: "Present",
@@ -277,6 +276,39 @@ export const Resume: React.FC = () => {
     },
   ];
 
+  const myProjects = [
+    {
+      name: "Agnos Cloud",
+      description: "Agnos (http://agnos-cloud.herokuapp.com/designs/+) provides you with a drag-and-drop interface to help you create system designs. You can also bring your system designs to life by provisioning them on any of the popular cloud providers, right from within the app.",
+      website: "http://agnos-cloud.herokuapp.com/designs/+",
+      startDate: "Oct 2021",
+      endDate: "Present",
+      roles: [{
+        title: "Lead Engineer",
+        startDate: "Oct 2021",
+        endDate: "Present",
+        type: "Part-Time",
+        description: "Agnos (http://agnos-cloud.herokuapp.com/designs/+) provides you with a drag-and-drop interface to help you create system designs. You can also bring your system designs to life by provisioning them on any of the popular cloud providers, right from within the app.",
+        tools: [tools["react"], tools["redux"], tools["javascript"], tools["typescript"], tools["node"], tools["docker"], tools["heroku"], tools["apolloserver"], tools["graphql"], tools["postgresql"]],
+      }]
+    },
+    {
+      name: "GraphStrap",
+      description: "This is a CLI tool that converts TypeScript types to GraphQL schema and their TypeScript resolvers.",
+      website: "https://www.npmjs.com/package/graphstrap",
+      startDate: "Nov 2020",
+      endDate: "Present",
+      roles: [{
+        title: "Lead Engineer",
+        startDate: "Nov 2020",
+        endDate: "Present",
+        type: "Part-Time",
+        description: "GraphStrap (https://www.npmjs.com/package/graphstrap) is a CLI tool that allows you to bootstrap a GraphQL server by converting TypeScript types to GraphQL schema and their TypeScript resolvers. You define your business models as TypeScript interfaces, and graphstrap will generate the appropriate graphql schema along with their resolvers.",
+        tools: [tools["javascript"], tools["typescript"]],
+      }]
+    },
+  ];
+
   let componentRef = React.createRef<HTMLElement>();
 
   return (
@@ -294,6 +326,15 @@ export const Resume: React.FC = () => {
         </Experience>
         <Experience title="Experiences (Part-Time, Contracts)">
           {parttimeCompanies.map(company => (
+            <Company key={company.name} company={company}>
+              {company.roles.map(role => (
+                <Role key={role.title} role={role} />
+              ))}
+            </Company>
+          ))}
+        </Experience>
+        <Experience title="My Projects">
+          {myProjects.map(company => (
             <Company key={company.name} company={company}>
               {company.roles.map(role => (
                 <Role key={role.title} role={role} />
